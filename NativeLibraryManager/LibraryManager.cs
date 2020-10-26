@@ -91,7 +91,7 @@ namespace NativeLibraryManager
 		/// WARNING! Explicit library loading on MacOs IS USELESS, and your P/Invoke call will fail unless
 		/// library path is discoverable by system library loader.
 		/// </summary>
-		public bool LoadLibraryExplicit { get; set; } = false;
+		public bool LoadLibraryExplicit { get; set; } = true;
 
 		/// <summary>
 		/// Extract and load native library based on current platform and process bitness.

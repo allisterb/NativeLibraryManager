@@ -33,11 +33,11 @@ namespace NativeLibraryManager
 		        
 		        if (Platform == Platform.Windows)
 		        {
-			        LoadWindowsLibrary(path);
+					LoadWindowsLibrary(path);
 		        }
-		        else if (Platform == Platform.Linux || Platform == Platform.MacOs)
+		        else 
 		        {
-			        LoadNixLibrary(path);
+					LoadNixLibrary(path);
 		        }
 	        }
         }
@@ -84,7 +84,7 @@ namespace NativeLibraryManager
 
 		private const int RTLD_LAZY = 0x00001; //Only resolve symbols as needed
 		private const int RTLD_GLOBAL = 0x00100; //Make symbols available to libraries loaded later
-		[DllImport("dl")]
+		[DllImport("libdl.so.2")]
 		private static extern IntPtr dlopen (string file, int mode);
 
 		#endregion
